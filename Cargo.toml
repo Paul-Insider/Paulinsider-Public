@@ -1,0 +1,12 @@
+[package]
+name = "paulinsider-web-foundations"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+publish = false
+description = "Small, dependency-free Rust examples from Paul Insider."
+repository = "https://github.com/Paul-Insider/Paulinsider-Public"
+homepage = "https://paulinsider.com"
+license-file = "LICENSE"
+
+[dependencies]

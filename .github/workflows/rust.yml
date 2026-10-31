@@ -1,0 +1,24 @@
+name: Rust checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out public sample
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Test without fetching dependencies
+        run: cargo test --locked --offline
+      - name: Run the small demonstration
+        run: cargo run --locked --offline --example web_policies
